@@ -20,6 +20,18 @@ public class UserServiceImp implements UserService {
       userDao.add(user);
    }
 
+   @Transactional
+   @Override
+   public User get(long id) {
+      return userDao.get(id);
+   }
+
+   @Transactional
+   @Override
+   public User get(String model, int series) {
+      return userDao.get(model, series);
+   }
+
    @Transactional(readOnly = true)
    @Override
    public List<User> listUsers() {
