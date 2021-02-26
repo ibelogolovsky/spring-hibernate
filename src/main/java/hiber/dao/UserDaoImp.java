@@ -34,7 +34,7 @@ public class UserDaoImp implements UserDao {
         query.setParameter("series", series);
 
         List<User> resultList = query.getResultList();
-        return resultList.isEmpty() ? null : query.getResultList().get(0);
+        return resultList.isEmpty() ? null : query.getSingleResult();
     }
 
     @Override
